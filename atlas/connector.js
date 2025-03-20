@@ -1,8 +1,8 @@
 let mongodb = require('mongoose')
-require('dotenv').config()
+require('dotenv').config({ path: '../.env' });
 let url = process.env.ATLAS_URL
-console.log(url)
-mongodb.connect('mongodb+srv://ausaafali:pbkljha*(&@cluster0.8ewy0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+console.log('Please wait while we connect you to: ' + url)
+mongodb.connect(url)
     .then(() => {
         console.log('DB Connected')
     }).catch((e) => {
